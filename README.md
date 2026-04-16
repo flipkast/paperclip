@@ -35,6 +35,29 @@ It looks like a task manager — but under the hood it has org charts, budgets, 
 
 **Manage business goals, not pull requests.**
 
+## 🎯 Featured: AI Marketing Agency
+
+Our flagship template is a **fully autonomous AI marketing agency** — 7 specialized agents covering the entire marketing lifecycle out of the box:
+
+| Agent | What It Does |
+|-------|-------------|
+| **CMO** | Strategy, delegation, performance review, board reporting |
+| **Content Creator** | Blog posts, ad copy, video scripts, emails, social content |
+| **Video Analyst** | Video performance analysis, trend detection, content briefs |
+| **Competitor Analyst** | Market intelligence, competitor tracking, battlecards |
+| **Social Media Manager** | Multi-platform publishing, community engagement |
+| **SEO Specialist** | Keyword research, on-page optimization, rankings |
+| **Ad Campaign Manager** | Paid media, A/B testing, ROAS optimization |
+
+```bash
+# Deploy the marketing agency in one command:
+npx paperclipai onboard --yes
+# Then import the marketing agency template:
+npx paperclipai companies import ./companies/marketing-agency
+```
+
+See [`companies/marketing-agency/`](companies/marketing-agency/) for full agent configs, project templates, and skills.
+
 |        | Step            | Example                                                            |
 | ------ | --------------- | ------------------------------------------------------------------ |
 | **01** | Define the goal | _"Build the #1 AI note-taking app to $1M MRR."_                    |
@@ -69,7 +92,11 @@ It looks like a task manager — but under the hood it has org charts, budgets, 
 ## Paperclip is right for you if
 
 - ✅ You want to build **autonomous AI companies**
+- ✅ You want to run an **AI marketing agency** — content, video analysis, competitor intel, ads, SEO, social media
 - ✅ You **coordinate many different agents** (OpenClaw, Codex, Claude, Cursor) toward a common goal
+- ✅ You need agents for **media creation** — blog posts, video scripts, ad copy, social content at scale
+- ✅ You want **continuous competitor monitoring** with automated intelligence reports
+- ✅ You want **video content analysis** across YouTube, TikTok, and Instagram with trend detection
 - ✅ You have **20 simultaneous Claude Code terminals** open and lose track of what everyone is doing
 - ✅ You want agents running **autonomously 24/7**, but still want to audit work and chime in when needed
 - ✅ You want to **monitor costs** and enforce budgets
@@ -133,6 +160,9 @@ Monitor and manage your autonomous businesses from anywhere.
 | ------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
 | ❌ You have 20 Claude Code tabs open and can't track which one does what. On reboot you lose everything.                              | ✅ Tasks are ticket-based, conversations are threaded, sessions persist across reboots.                                                |
 | ❌ You manually gather context from several places to remind your bot what you're actually doing.                                     | ✅ Context flows from the task up through the project and company goals — your agent always knows what to do and why.                  |
+| ❌ Your marketing is scattered: one bot writes blogs, another does SEO, another tracks competitors — but they don't coordinate.       | ✅ A marketing org chart with CMO, content, SEO, ads, social, video, and competitor agents — all coordinated through Paperclip.        |
+| ❌ You have no idea what your competitors launched this week unless you manually check every day.                                     | ✅ A Competitor Analyst agent monitors competitor activity on a schedule and delivers weekly intelligence reports.                       |
+| ❌ Video content strategy is guesswork — you don't know what formats or topics perform best.                                         | ✅ A Video Analyst agent tracks performance across platforms, detects trends, and generates data-driven content briefs.                 |
 | ❌ Folders of agent configs are disorganized and you're re-inventing task management, communication, and coordination between agents. | ✅ Paperclip gives you org charts, ticketing, delegation, and governance out of the box — so you run a company, not a pile of scripts. |
 | ❌ Runaway loops waste hundreds of dollars of tokens and max your quota before you even know what happened.                           | ✅ Cost tracking surfaces token budgets and throttles agents when they're out. Management prioritizes with budgets.                    |
 | ❌ You have recurring jobs (customer support, social, reports) and have to remember to manually kick them off.                        | ✅ Heartbeats handle regular work on a schedule. Management supervises.                                                                |
@@ -209,6 +239,12 @@ Locally, a single Node.js process manages an embedded Postgres and local file st
 
 If you're a solo-entreprenuer you can use Tailscale to access Paperclip on the go. Then later you can deploy to e.g. Vercel when you need it.
 
+**How do I set up the AI marketing agency?**
+Import the pre-built template: `npx paperclipai companies import ./companies/marketing-agency`. This gives you a CMO, Content Creator, Video Analyst, Competitor Analyst, Social Media Manager, SEO Specialist, and Ad Campaign Manager — all pre-configured with prompts, heartbeat schedules, and project templates. Customize the agent prompts with your brand guidelines and you're running.
+
+**What marketing tasks can the agents handle?**
+The full marketing lifecycle: content creation (blogs, ads, video scripts, emails, social), competitor intelligence (website monitoring, ad tracking, market analysis), video content analysis (performance metrics, trend detection, content briefs), SEO (keyword research, optimization, ranking tracking), social media management (scheduling, engagement, analytics), and paid advertising (campaign management, A/B testing, ROAS optimization).
+
 **Can I run multiple companies?**
 Yes. A single deployment can run an unlimited number of companies with complete data isolation.
 
@@ -256,6 +292,12 @@ See [doc/DEVELOPING.md](doc/DEVELOPING.md) for the full development guide.
 - ✅ Scheduled Routines
 - ✅ Better Budgeting
 - ✅ Agent Reviews and Approvals
+- ✅ AI Marketing Agency company template
+- ⚪ Marketing platform integrations (Google Ads, Meta Ads, social APIs)
+- ⚪ Video analysis pipeline (YouTube, TikTok, Instagram analytics)
+- ⚪ Competitor monitoring dashboards
+- ⚪ Content calendar and publishing automation
+- ⚪ SEO tracking and keyword monitoring
 - ⚪ Multiple Human Users
 - ⚪ Cloud / Sandbox agents (e.g. Cursor / e2b agents)
 - ⚪ Artifacts & Work Products

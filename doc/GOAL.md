@@ -10,9 +10,24 @@ Paperclip is not the company. Paperclip is what makes the companies possible. We
 
 The measure of our success is not whether one company works. It's whether Paperclip becomes the default foundation that autonomous companies are built on — and whether those companies, collectively, become a serious economic force that rivals the output of nations.
 
+## Primary Focus: AI Marketing Agencies
+
+Our flagship use case is **autonomous AI marketing agencies** — teams of AI agents that handle the full marketing lifecycle:
+
+- **Media Creation** — AI agents that produce blog posts, ad copy, video scripts, social content, email campaigns, and landing pages at scale
+- **Video Analysis** — agents that monitor video performance across YouTube, TikTok, Instagram, and LinkedIn; detect trends; and generate data-backed content briefs
+- **Competitor Analysis** — agents that continuously track competitor campaigns, pricing, positioning, content strategy, and market share; delivering real-time intelligence
+- **Social Media Management** — agents that manage multi-platform presence, community engagement, and content distribution on schedule
+- **SEO & Content Strategy** — agents that research keywords, optimize content, build link strategies, and track organic rankings
+- **Ad Campaign Optimization** — agents that run paid media across Google, Meta, LinkedIn, and TikTok with A/B testing and ROAS-driven budget allocation
+
+A ready-to-deploy marketing agency template is available in `companies/marketing-agency/`.
+
 ## The Problem
 
 Task management software doesn't go far enough. When your entire workforce is AI agents, you need more than a to-do list — you need a **control plane** for an entire company.
+
+For marketing specifically: running a multi-channel marketing operation requires coordinating content creation, competitive intelligence, video analysis, SEO, social media, and paid advertising simultaneously. No single AI agent can handle all of this. You need a team — and Paperclip is how you manage that team.
 
 ## What This Is
 
