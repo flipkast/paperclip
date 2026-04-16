@@ -33,6 +33,11 @@ import { accessRoutes } from "./routes/access.js";
 import { pluginRoutes } from "./routes/plugins.js";
 import { adapterRoutes } from "./routes/adapters.js";
 import { pluginUiStaticRoutes } from "./routes/plugin-ui-static.js";
+import { mediaAssetRoutes } from "./routes/media-assets.js";
+import { competitorRoutes } from "./routes/competitors.js";
+import { contentCalendarRoutes } from "./routes/content-calendar.js";
+import { campaignMetricsRoutes } from "./routes/campaign-metrics.js";
+import { clientBrandRoutes } from "./routes/client-brands.js";
 import { applyUiBranding } from "./ui-branding.js";
 import { logger } from "./middleware/logger.js";
 import { DEFAULT_LOCAL_PLUGIN_DIR, pluginLoader } from "./services/plugin-loader.js";
@@ -209,6 +214,13 @@ export async function createApp(
   api.use(sidebarPreferenceRoutes(db));
   api.use(inboxDismissalRoutes(db));
   api.use(instanceSettingsRoutes(db));
+
+  // Marketing platform routes
+  app.use(mediaAssetRoutes(db));
+  app.use(competitorRoutes(db));
+  app.use(contentCalendarRoutes(db));
+  app.use(campaignMetricsRoutes(db));
+  app.use(clientBrandRoutes(db));
   const hostServicesDisposers = new Map<string, () => void>();
   const workerManager = createPluginWorkerManager();
   const pluginRegistry = pluginRegistryService(db);

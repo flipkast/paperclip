@@ -43,9 +43,9 @@ export function MobileBottomNav({ visible }: MobileBottomNavProps) {
   const items = useMemo<MobileNavItem[]>(
     () => [
       { type: "link", to: "/dashboard", label: "Home", icon: House },
-      { type: "link", to: "/issues", label: "Issues", icon: CircleDot },
-      { type: "action", label: "Create", icon: SquarePen, onClick: () => openNewIssue() },
-      { type: "link", to: "/agents/all", label: "Agents", icon: Users },
+      { type: "link", to: "/content/assets", label: "Content", icon: CircleDot },
+      { type: "link", to: "/approvals", label: "Review", icon: SquarePen },
+      { type: "link", to: "/competitors", label: "Intel", icon: Users },
       {
         type: "link",
         to: "/inbox",
@@ -54,7 +54,7 @@ export function MobileBottomNav({ visible }: MobileBottomNavProps) {
         badge: inboxBadge.inbox,
       },
     ],
-    [openNewIssue, inboxBadge.inbox],
+    [inboxBadge.inbox],
   );
 
   return (

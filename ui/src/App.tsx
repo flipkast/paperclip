@@ -45,6 +45,11 @@ import { BoardClaimPage } from "./pages/BoardClaim";
 import { CliAuthPage } from "./pages/CliAuth";
 import { InviteLandingPage } from "./pages/InviteLanding";
 import { NotFoundPage } from "./pages/NotFound";
+import { MarketingDashboard } from "./pages/MarketingDashboard";
+import { AssetReviewPage } from "./pages/AssetReview";
+import { CompetitorOverview } from "./pages/CompetitorOverview";
+import { ContentAssets } from "./pages/ContentAssets";
+import { ClientOnboarding } from "./pages/ClientOnboarding";
 import { queryKeys } from "./lib/queryKeys";
 import { useCompany } from "./context/CompanyContext";
 import { useDialog } from "./context/DialogContext";
@@ -122,7 +127,27 @@ function boardRoutes() {
   return (
     <>
       <Route index element={<Navigate to="dashboard" replace />} />
-      <Route path="dashboard" element={<Dashboard />} />
+      <Route path="dashboard" element={<MarketingDashboard />} />
+      <Route path="get-started" element={<ClientOnboarding />} />
+
+      {/* Marketing routes */}
+      <Route path="approvals" element={<AssetReviewPage />} />
+      <Route path="content/assets" element={<ContentAssets />} />
+      <Route path="content/assets/:assetId" element={<AssetReviewPage />} />
+      <Route path="content/calendar" element={<ContentAssets />} />
+      <Route path="content/create" element={<ContentAssets />} />
+      <Route path="competitors" element={<CompetitorOverview />} />
+      <Route path="competitors/reports" element={<CompetitorOverview />} />
+      <Route path="campaigns/active" element={<MarketingDashboard />} />
+      <Route path="campaigns/performance" element={<MarketingDashboard />} />
+      <Route path="analytics" element={<MarketingDashboard />} />
+      <Route path="settings/brand" element={<CompanySettings />} />
+      <Route path="settings/competitors" element={<CompetitorOverview />} />
+      <Route path="settings/integrations" element={<CompanySettings />} />
+      <Route path="settings/billing" element={<CompanySettings />} />
+
+      {/* Legacy Paperclip routes (kept for admin/backend access) */}
+      <Route path="old-dashboard" element={<Dashboard />} />
       <Route path="onboarding" element={<OnboardingRoutePage />} />
       <Route path="companies" element={<Companies />} />
       <Route path="company/settings" element={<CompanySettings />} />

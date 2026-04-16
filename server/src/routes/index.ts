@@ -17,3 +17,10 @@ export { inboxDismissalRoutes } from "./inbox-dismissals.js";
 export { llmRoutes } from "./llms.js";
 export { accessRoutes } from "./access.js";
 export { instanceSettingsRoutes } from "./instance-settings.js";
+
+// Marketing platform routes
+export { mediaAssetRoutes } from "./media-assets.js";
+export { competitorRoutes } from "./competitors.js";
+export { contentCalendarRoutes } from "./content-calendar.js";
+export { campaignMetricsRoutes } from "./campaign-metrics.js";
+export { clientBrandRoutes } from "./client-brands.js";

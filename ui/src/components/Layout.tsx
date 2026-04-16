@@ -4,6 +4,7 @@ import { BookOpen, Moon, Settings, Sun } from "lucide-react";
 import { Link, Outlet, useLocation, useNavigate, useNavigationType, useParams } from "@/lib/router";
 import { CompanyRail } from "./CompanyRail";
 import { Sidebar } from "./Sidebar";
+import { MarketingSidebar } from "./MarketingSidebar";
 import { InstanceSidebar } from "./InstanceSidebar";
 import { BreadcrumbBar } from "./BreadcrumbBar";
 import { PropertiesPanel } from "./PropertiesPanel";
@@ -341,7 +342,7 @@ export function Layout() {
           >
             <div className="flex flex-1 min-h-0 overflow-hidden">
               <CompanyRail />
-              {isInstanceSettingsRoute ? <InstanceSidebar /> : <Sidebar />}
+              {isInstanceSettingsRoute ? <InstanceSidebar /> : <MarketingSidebar />}
             </div>
             <div className="border-t border-r border-border px-3 py-2 bg-background">
               <div className="flex items-center gap-1">
@@ -399,7 +400,7 @@ export function Layout() {
                   sidebarOpen ? "w-60" : "w-0"
                 )}
               >
-                {isInstanceSettingsRoute ? <InstanceSidebar /> : <Sidebar />}
+                {isInstanceSettingsRoute ? <InstanceSidebar /> : <MarketingSidebar />}
               </div>
             </div>
             <div className="border-t border-r border-border px-3 py-2">

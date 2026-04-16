@@ -63,3 +63,11 @@ export { pluginEntities } from "./plugin_entities.js";
 export { pluginJobs, pluginJobRuns } from "./plugin_jobs.js";
 export { pluginWebhookDeliveries } from "./plugin_webhooks.js";
 export { pluginLogs } from "./plugin_logs.js";
+
+// Marketing platform tables
+export { clientBrands } from "./client_brands.js";
+export { competitors } from "./competitors.js";
+export { mediaAssets } from "./media_assets.js";
+export { contentCalendar } from "./content_calendar.js";
+export { competitorEvents } from "./competitor_events.js";
+export { campaignMetrics } from "./campaign_metrics.js";
