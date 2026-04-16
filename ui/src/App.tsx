@@ -132,19 +132,19 @@ function boardRoutes() {
 
       {/* Marketing routes */}
       <Route path="approvals" element={<AssetReviewPage />} />
-      <Route path="content/assets" element={<ContentAssets />} />
-      <Route path="content/assets/:assetId" element={<AssetReviewPage />} />
-      <Route path="content/calendar" element={<ContentAssets />} />
-      <Route path="content/create" element={<ContentAssets />} />
+      <Route path="content-assets" element={<ContentAssets />} />
+      <Route path="content-assets/:assetId" element={<AssetReviewPage />} />
+      <Route path="content-calendar" element={<ContentAssets />} />
+      <Route path="content-create" element={<ContentAssets />} />
       <Route path="competitors" element={<CompetitorOverview />} />
-      <Route path="competitors/reports" element={<CompetitorOverview />} />
-      <Route path="campaigns/active" element={<MarketingDashboard />} />
-      <Route path="campaigns/performance" element={<MarketingDashboard />} />
+      <Route path="competitor-reports" element={<CompetitorOverview />} />
+      <Route path="campaigns-active" element={<MarketingDashboard />} />
+      <Route path="campaigns-performance" element={<MarketingDashboard />} />
       <Route path="analytics" element={<MarketingDashboard />} />
-      <Route path="settings/brand" element={<CompanySettings />} />
-      <Route path="settings/competitors" element={<CompetitorOverview />} />
-      <Route path="settings/integrations" element={<CompanySettings />} />
-      <Route path="settings/billing" element={<CompanySettings />} />
+      <Route path="settings-brand" element={<CompanySettings />} />
+      <Route path="settings-competitors" element={<CompetitorOverview />} />
+      <Route path="settings-integrations" element={<CompanySettings />} />
+      <Route path="settings-billing" element={<CompanySettings />} />
 
       {/* Legacy Paperclip routes (kept for admin/backend access) */}
       <Route path="old-dashboard" element={<Dashboard />} />

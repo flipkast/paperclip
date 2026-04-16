@@ -4,14 +4,12 @@ import {
   Calendar,
   FolderOpen,
   Search,
-  Shield,
   Eye,
   FileText,
   BarChart3,
   TrendingUp,
   Target,
   CheckSquare,
-  Settings,
   Palette,
   Users,
   Link2,
@@ -77,21 +75,21 @@ export function MarketingSidebar() {
 
         {/* Content */}
         <SidebarSection label="Content">
-          <SidebarNavItem to="/content/calendar" label="Calendar" icon={Calendar} />
-          <SidebarNavItem to="/content/assets" label="Assets" icon={FolderOpen} />
-          <SidebarNavItem to="/content/create" label="Create" icon={Video} />
+          <SidebarNavItem to="/content-calendar" label="Calendar" icon={Calendar} />
+          <SidebarNavItem to="/content-assets" label="Assets" icon={FolderOpen} />
+          <SidebarNavItem to="/content-create" label="Create" icon={Video} />
         </SidebarSection>
 
         {/* Intelligence */}
         <SidebarSection label="Intelligence">
           <SidebarNavItem to="/competitors" label="Competitors" icon={Eye} />
-          <SidebarNavItem to="/competitors/reports" label="Reports" icon={FileText} />
+          <SidebarNavItem to="/competitor-reports" label="Reports" icon={FileText} />
         </SidebarSection>
 
         {/* Campaigns */}
         <SidebarSection label="Campaigns">
-          <SidebarNavItem to="/campaigns/active" label="Active" icon={Target} />
-          <SidebarNavItem to="/campaigns/performance" label="Performance" icon={TrendingUp} />
+          <SidebarNavItem to="/campaigns-active" label="Active" icon={Target} />
+          <SidebarNavItem to="/campaigns-performance" label="Performance" icon={TrendingUp} />
         </SidebarSection>
 
         {/* Analytics */}
@@ -101,10 +99,10 @@ export function MarketingSidebar() {
 
         {/* Settings */}
         <SidebarSection label="Settings">
-          <SidebarNavItem to="/settings/brand" label="Brand" icon={Palette} />
-          <SidebarNavItem to="/settings/competitors" label="Competitors" icon={Users} />
-          <SidebarNavItem to="/settings/integrations" label="Integrations" icon={Link2} />
-          <SidebarNavItem to="/settings/billing" label="Billing" icon={CreditCard} />
+          <SidebarNavItem to="/settings-brand" label="Brand" icon={Palette} />
+          <SidebarNavItem to="/settings-competitors" label="Competitors" icon={Users} />
+          <SidebarNavItem to="/settings-integrations" label="Integrations" icon={Link2} />
+          <SidebarNavItem to="/settings-billing" label="Billing" icon={CreditCard} />
         </SidebarSection>
       </nav>
     </aside>
