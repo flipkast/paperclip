@@ -1,4 +1,4 @@
-import { apiClient } from "./client";
+import { api } from "./client";
 import type { MediaAsset } from "./mediaAssets";
 
 export interface CalendarEntry {
@@ -25,11 +25,14 @@ export interface CalendarEntryWithAsset {
 }
 
 export const contentCalendarApi = {
-  list: (companyId: string, from?: string, to?: string, platform?: string) =>
-    apiClient.get<CalendarEntryWithAsset[]>(
-      `/api/companies/${companyId}/content-calendar`,
-      { params: { from, to, platform } },
-    ),
+  list: (companyId: string, from?: string, to?: string, platform?: string) => {
+    const params = new URLSearchParams();
+    if (from) params.set("from", from);
+    if (to) params.set("to", to);
+    if (platform) params.set("platform", platform);
+    const qs = params.toString();
+    return api.get<CalendarEntryWithAsset[]>(`/companies/${companyId}/content-calendar${qs ? `?${qs}` : ""}`);
+  },
 
   schedule: (
     companyId: string,
@@ -40,15 +43,11 @@ export const contentCalendarApi = {
       hashtags?: string[];
       scheduledAt: string;
     },
-  ) =>
-    apiClient.post<CalendarEntry>(`/api/companies/${companyId}/content-calendar`, data),
+  ) => api.post<CalendarEntry>(`/companies/${companyId}/content-calendar`, data),
 
   update: (companyId: string, entryId: string, data: Partial<CalendarEntry>) =>
-    apiClient.patch<CalendarEntry>(
-      `/api/companies/${companyId}/content-calendar/${entryId}`,
-      data,
-    ),
+    api.patch<CalendarEntry>(`/companies/${companyId}/content-calendar/${entryId}`, data),
 
   cancel: (companyId: string, entryId: string) =>
-    apiClient.delete(`/api/companies/${companyId}/content-calendar/${entryId}`),
+    api.delete(`/companies/${companyId}/content-calendar/${entryId}`),
 };

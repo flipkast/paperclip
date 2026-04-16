@@ -1,4 +1,4 @@
-import { apiClient } from "./client";
+import { api } from "./client";
 
 export interface MediaAsset {
   id: string;
@@ -28,23 +28,26 @@ export interface MediaAsset {
 }
 
 export const mediaAssetsApi = {
-  list: (companyId: string, filters?: { type?: string; status?: string }) =>
-    apiClient.get<MediaAsset[]>(`/api/companies/${companyId}/media-assets`, {
-      params: filters,
-    }),
+  list: (companyId: string, filters?: { type?: string; status?: string }) => {
+    const params = new URLSearchParams();
+    if (filters?.type) params.set("type", filters.type);
+    if (filters?.status) params.set("status", filters.status);
+    const qs = params.toString();
+    return api.get<MediaAsset[]>(`/companies/${companyId}/media-assets${qs ? `?${qs}` : ""}`);
+  },
 
   get: (companyId: string, assetId: string) =>
-    apiClient.get<MediaAsset>(`/api/companies/${companyId}/media-assets/${assetId}`),
+    api.get<MediaAsset>(`/companies/${companyId}/media-assets/${assetId}`),
 
   create: (companyId: string, data: Partial<MediaAsset>) =>
-    apiClient.post<MediaAsset>(`/api/companies/${companyId}/media-assets`, data),
+    api.post<MediaAsset>(`/companies/${companyId}/media-assets`, data),
 
   updateStatus: (companyId: string, assetId: string, status: string, reviewNote?: string) =>
-    apiClient.patch<MediaAsset>(`/api/companies/${companyId}/media-assets/${assetId}`, {
+    api.patch<MediaAsset>(`/companies/${companyId}/media-assets/${assetId}`, {
       status,
       reviewNote,
     }),
 
   listPending: (companyId: string) =>
-    apiClient.get<MediaAsset[]>(`/api/companies/${companyId}/media-assets-pending`),
+    api.get<MediaAsset[]>(`/companies/${companyId}/media-assets-pending`),
 };

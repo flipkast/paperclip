@@ -1,4 +1,4 @@
-import { apiClient } from "./client";
+import { api } from "./client";
 
 export interface Competitor {
   id: string;
@@ -33,22 +33,22 @@ export interface CompetitorEvent {
 
 export const competitorsApi = {
   list: (companyId: string) =>
-    apiClient.get<Competitor[]>(`/api/companies/${companyId}/competitors`),
+    api.get<Competitor[]>(`/companies/${companyId}/competitors`),
 
   create: (companyId: string, data: Partial<Competitor>) =>
-    apiClient.post<Competitor>(`/api/companies/${companyId}/competitors`, data),
+    api.post<Competitor>(`/companies/${companyId}/competitors`, data),
 
   update: (companyId: string, competitorId: string, data: Partial<Competitor>) =>
-    apiClient.patch<Competitor>(
-      `/api/companies/${companyId}/competitors/${competitorId}`,
-      data,
-    ),
+    api.patch<Competitor>(`/companies/${companyId}/competitors/${competitorId}`, data),
 
   remove: (companyId: string, competitorId: string) =>
-    apiClient.delete(`/api/companies/${companyId}/competitors/${competitorId}`),
+    api.delete(`/companies/${companyId}/competitors/${competitorId}`),
 
-  events: (companyId: string, filters?: { severity?: string; limit?: number }) =>
-    apiClient.get<CompetitorEvent[]>(`/api/companies/${companyId}/competitor-events`, {
-      params: filters,
-    }),
+  events: (companyId: string, filters?: { severity?: string; limit?: number }) => {
+    const params = new URLSearchParams();
+    if (filters?.severity) params.set("severity", filters.severity);
+    if (filters?.limit) params.set("limit", String(filters.limit));
+    const qs = params.toString();
+    return api.get<CompetitorEvent[]>(`/companies/${companyId}/competitor-events${qs ? `?${qs}` : ""}`);
+  },
 };

@@ -1,4 +1,4 @@
-import { apiClient } from "./client";
+import { api } from "./client";
 
 export interface MetricsTotals {
   totalViews: number;
@@ -38,9 +38,12 @@ export interface CampaignMetricsResponse {
 }
 
 export const campaignMetricsApi = {
-  get: (companyId: string, from?: string, to?: string, platform?: string) =>
-    apiClient.get<CampaignMetricsResponse>(
-      `/api/companies/${companyId}/campaign-metrics`,
-      { params: { from, to, platform } },
-    ),
+  get: (companyId: string, from?: string, to?: string, platform?: string) => {
+    const params = new URLSearchParams();
+    if (from) params.set("from", from);
+    if (to) params.set("to", to);
+    if (platform) params.set("platform", platform);
+    const qs = params.toString();
+    return api.get<CampaignMetricsResponse>(`/companies/${companyId}/campaign-metrics${qs ? `?${qs}` : ""}`);
+  },
 };
