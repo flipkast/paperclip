@@ -216,11 +216,11 @@ export async function createApp(
   api.use(instanceSettingsRoutes(db));
 
   // Marketing platform routes
-  app.use(mediaAssetRoutes(db));
-  app.use(competitorRoutes(db));
-  app.use(contentCalendarRoutes(db));
-  app.use(campaignMetricsRoutes(db));
-  app.use(clientBrandRoutes(db));
+  api.use(mediaAssetRoutes(db));
+  api.use(competitorRoutes(db));
+  api.use(contentCalendarRoutes(db));
+  api.use(campaignMetricsRoutes(db));
+  api.use(clientBrandRoutes(db));
   const hostServicesDisposers = new Map<string, () => void>();
   const workerManager = createPluginWorkerManager();
   const pluginRegistry = pluginRegistryService(db);

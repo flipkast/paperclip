@@ -8,7 +8,7 @@ export function contentCalendarRoutes(db: Db) {
   const router = Router();
 
   // Get calendar entries for a date range
-  router.get("/api/companies/:companyId/content-calendar", async (req: Request, res: Response) => {
+  router.get("/companies/:companyId/content-calendar", async (req: Request, res: Response) => {
     const { companyId } = req.params;
     assertCompanyAccess(req, companyId);
 
@@ -41,7 +41,7 @@ export function contentCalendarRoutes(db: Db) {
   });
 
   // Schedule content
-  router.post("/api/companies/:companyId/content-calendar", async (req: Request, res: Response) => {
+  router.post("/companies/:companyId/content-calendar", async (req: Request, res: Response) => {
     const { companyId } = req.params;
     assertCompanyAccess(req, companyId);
 
@@ -64,7 +64,7 @@ export function contentCalendarRoutes(db: Db) {
 
   // Update calendar entry (reschedule, change caption, cancel)
   router.patch(
-    "/api/companies/:companyId/content-calendar/:entryId",
+    "/companies/:companyId/content-calendar/:entryId",
     async (req: Request, res: Response) => {
       const { companyId, entryId } = req.params;
       assertCompanyAccess(req, companyId);
@@ -93,7 +93,7 @@ export function contentCalendarRoutes(db: Db) {
 
   // Delete calendar entry
   router.delete(
-    "/api/companies/:companyId/content-calendar/:entryId",
+    "/companies/:companyId/content-calendar/:entryId",
     async (req: Request, res: Response) => {
       const { companyId, entryId } = req.params;
       assertCompanyAccess(req, companyId);

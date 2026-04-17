@@ -8,7 +8,7 @@ export function competitorRoutes(db: Db) {
   const router = Router();
 
   // List competitors
-  router.get("/api/companies/:companyId/competitors", async (req: Request, res: Response) => {
+  router.get("/companies/:companyId/competitors", async (req: Request, res: Response) => {
     const { companyId } = req.params;
     assertCompanyAccess(req, companyId);
 
@@ -22,7 +22,7 @@ export function competitorRoutes(db: Db) {
   });
 
   // Add competitor
-  router.post("/api/companies/:companyId/competitors", async (req: Request, res: Response) => {
+  router.post("/companies/:companyId/competitors", async (req: Request, res: Response) => {
     const { companyId } = req.params;
     assertCompanyAccess(req, companyId);
 
@@ -37,7 +37,7 @@ export function competitorRoutes(db: Db) {
   });
 
   // Update competitor
-  router.patch("/api/companies/:companyId/competitors/:competitorId", async (req: Request, res: Response) => {
+  router.patch("/companies/:companyId/competitors/:competitorId", async (req: Request, res: Response) => {
     const { companyId, competitorId } = req.params;
     assertCompanyAccess(req, companyId);
 
@@ -64,7 +64,7 @@ export function competitorRoutes(db: Db) {
   });
 
   // Delete competitor
-  router.delete("/api/companies/:companyId/competitors/:competitorId", async (req: Request, res: Response) => {
+  router.delete("/companies/:companyId/competitors/:competitorId", async (req: Request, res: Response) => {
     const { companyId, competitorId } = req.params;
     assertCompanyAccess(req, companyId);
 
@@ -77,7 +77,7 @@ export function competitorRoutes(db: Db) {
   });
 
   // List competitor events (activity feed)
-  router.get("/api/companies/:companyId/competitor-events", async (req: Request, res: Response) => {
+  router.get("/companies/:companyId/competitor-events", async (req: Request, res: Response) => {
     const { companyId } = req.params;
     assertCompanyAccess(req, companyId);
 
@@ -102,7 +102,7 @@ export function competitorRoutes(db: Db) {
   });
 
   // Create competitor event (used by competitor analyst agent)
-  router.post("/api/companies/:companyId/competitor-events", async (req: Request, res: Response) => {
+  router.post("/companies/:companyId/competitor-events", async (req: Request, res: Response) => {
     const { companyId } = req.params;
     assertCompanyAccess(req, companyId);
 

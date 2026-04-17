@@ -8,7 +8,7 @@ export function mediaAssetRoutes(db: Db) {
   const router = Router();
 
   // List media assets for a company
-  router.get("/api/companies/:companyId/media-assets", async (req: Request, res: Response) => {
+  router.get("/companies/:companyId/media-assets", async (req: Request, res: Response) => {
     const { companyId } = req.params;
     assertCompanyAccess(req, companyId);
 
@@ -31,7 +31,7 @@ export function mediaAssetRoutes(db: Db) {
   });
 
   // Get single media asset
-  router.get("/api/companies/:companyId/media-assets/:assetId", async (req: Request, res: Response) => {
+  router.get("/companies/:companyId/media-assets/:assetId", async (req: Request, res: Response) => {
     const { companyId, assetId } = req.params;
     assertCompanyAccess(req, companyId);
 
@@ -48,7 +48,7 @@ export function mediaAssetRoutes(db: Db) {
   });
 
   // Create media asset
-  router.post("/api/companies/:companyId/media-assets", async (req: Request, res: Response) => {
+  router.post("/companies/:companyId/media-assets", async (req: Request, res: Response) => {
     const { companyId } = req.params;
     assertCompanyAccess(req, companyId);
 
@@ -76,7 +76,7 @@ export function mediaAssetRoutes(db: Db) {
   });
 
   // Update asset status (approve / reject / publish)
-  router.patch("/api/companies/:companyId/media-assets/:assetId", async (req: Request, res: Response) => {
+  router.patch("/companies/:companyId/media-assets/:assetId", async (req: Request, res: Response) => {
     const { companyId, assetId } = req.params;
     assertCompanyAccess(req, companyId);
 
@@ -108,7 +108,7 @@ export function mediaAssetRoutes(db: Db) {
   });
 
   // Get assets pending review
-  router.get("/api/companies/:companyId/media-assets-pending", async (req: Request, res: Response) => {
+  router.get("/companies/:companyId/media-assets-pending", async (req: Request, res: Response) => {
     const { companyId } = req.params;
     assertCompanyAccess(req, companyId);
 

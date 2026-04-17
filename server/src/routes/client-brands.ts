@@ -8,7 +8,7 @@ export function clientBrandRoutes(db: Db) {
   const router = Router();
 
   // Get brand for a company
-  router.get("/api/companies/:companyId/brand", async (req: Request, res: Response) => {
+  router.get("/companies/:companyId/brand", async (req: Request, res: Response) => {
     const { companyId } = req.params;
     assertCompanyAccess(req, companyId);
 
@@ -25,7 +25,7 @@ export function clientBrandRoutes(db: Db) {
   });
 
   // Create or update brand
-  router.put("/api/companies/:companyId/brand", async (req: Request, res: Response) => {
+  router.put("/companies/:companyId/brand", async (req: Request, res: Response) => {
     const { companyId } = req.params;
     assertCompanyAccess(req, companyId);
 

@@ -8,7 +8,7 @@ export function campaignMetricsRoutes(db: Db) {
   const router = Router();
 
   // Get aggregated metrics for a date range
-  router.get("/api/companies/:companyId/campaign-metrics", async (req: Request, res: Response) => {
+  router.get("/companies/:companyId/campaign-metrics", async (req: Request, res: Response) => {
     const { companyId } = req.params;
     assertCompanyAccess(req, companyId);
 
@@ -88,7 +88,7 @@ export function campaignMetricsRoutes(db: Db) {
   });
 
   // Ingest metrics (used by analytics collector agent)
-  router.post("/api/companies/:companyId/campaign-metrics", async (req: Request, res: Response) => {
+  router.post("/companies/:companyId/campaign-metrics", async (req: Request, res: Response) => {
     const { companyId } = req.params;
     assertCompanyAccess(req, companyId);
 
