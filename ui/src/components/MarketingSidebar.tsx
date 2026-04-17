@@ -1,4 +1,5 @@
 import {
+  Bot,
   LayoutDashboard,
   Video,
   Calendar,
@@ -15,12 +16,18 @@ import {
   Link2,
   CreditCard,
 } from "lucide-react";
-import { useQuery } from "@tanstack/react-query";
-import { SidebarSection } from "./SidebarSection";
-import { SidebarNavItem } from "./SidebarNavItem";
-import { useCompany } from "../context/CompanyContext";
-import { mediaAssetsApi } from "../api/mediaAssets";
-import { Button } from "@/components/ui/button";
+import {
+  Bot, useQuery } from "@tanstack/react-query";
+import {
+  Bot, SidebarSection } from "./SidebarSection";
+import {
+  Bot, SidebarNavItem } from "./SidebarNavItem";
+import {
+  Bot, useCompany } from "../context/CompanyContext";
+import {
+  Bot, mediaAssetsApi } from "../api/mediaAssets";
+import {
+  Bot, Button } from "@/components/ui/button";
 
 export function MarketingSidebar() {
   const { selectedCompanyId, selectedCompany } = useCompany();
@@ -65,6 +72,7 @@ export function MarketingSidebar() {
         {/* Main */}
         <div className="flex flex-col gap-0.5">
           <SidebarNavItem to="/dashboard" label="Dashboard" icon={LayoutDashboard} />
+          <SidebarNavItem to="/ai-team" label="AI Team" icon={Bot} />
           <SidebarNavItem
             to="/approvals"
             label="Approvals"

@@ -50,6 +50,7 @@ import { AssetReviewPage } from "./pages/AssetReview";
 import { CompetitorOverview } from "./pages/CompetitorOverview";
 import { ContentAssets } from "./pages/ContentAssets";
 import { ClientOnboarding } from "./pages/ClientOnboarding";
+import { AITeamPage } from "./pages/AITeam";
 import { queryKeys } from "./lib/queryKeys";
 import { useCompany } from "./context/CompanyContext";
 import { useDialog } from "./context/DialogContext";
@@ -128,6 +129,7 @@ function boardRoutes() {
     <>
       <Route index element={<Navigate to="dashboard" replace />} />
       <Route path="dashboard" element={<MarketingDashboard />} />
+      <Route path="ai-team" element={<AITeamPage />} />
       <Route path="get-started" element={<ClientOnboarding />} />
 
       {/* Marketing routes */}
