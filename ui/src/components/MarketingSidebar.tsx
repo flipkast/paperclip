@@ -16,18 +16,12 @@ import {
   Link2,
   CreditCard,
 } from "lucide-react";
-import {
-  Bot, useQuery } from "@tanstack/react-query";
-import {
-  Bot, SidebarSection } from "./SidebarSection";
-import {
-  Bot, SidebarNavItem } from "./SidebarNavItem";
-import {
-  Bot, useCompany } from "../context/CompanyContext";
-import {
-  Bot, mediaAssetsApi } from "../api/mediaAssets";
-import {
-  Bot, Button } from "@/components/ui/button";
+import { useQuery } from "@tanstack/react-query";
+import { SidebarSection } from "./SidebarSection";
+import { SidebarNavItem } from "./SidebarNavItem";
+import { useCompany } from "../context/CompanyContext";
+import { mediaAssetsApi } from "../api/mediaAssets";
+import { Button } from "@/components/ui/button";
 
 export function MarketingSidebar() {
   const { selectedCompanyId, selectedCompany } = useCompany();
@@ -47,7 +41,6 @@ export function MarketingSidebar() {
 
   return (
     <aside className="w-60 h-full min-h-0 border-r border-border bg-background flex flex-col">
-      {/* Brand header */}
       <div className="flex items-center gap-2 px-3 h-12 shrink-0">
         {selectedCompany?.brandColor && (
           <div
@@ -69,7 +62,6 @@ export function MarketingSidebar() {
       </div>
 
       <nav className="flex-1 min-h-0 overflow-y-auto scrollbar-auto-hide flex flex-col gap-4 px-3 py-2">
-        {/* Main */}
         <div className="flex flex-col gap-0.5">
           <SidebarNavItem to="/dashboard" label="Dashboard" icon={LayoutDashboard} />
           <SidebarNavItem to="/ai-team" label="AI Team" icon={Bot} />
@@ -81,31 +73,26 @@ export function MarketingSidebar() {
           />
         </div>
 
-        {/* Content */}
         <SidebarSection label="Content">
           <SidebarNavItem to="/content-calendar" label="Calendar" icon={Calendar} />
           <SidebarNavItem to="/content-assets" label="Assets" icon={FolderOpen} />
           <SidebarNavItem to="/content-create" label="Create" icon={Video} />
         </SidebarSection>
 
-        {/* Intelligence */}
         <SidebarSection label="Intelligence">
           <SidebarNavItem to="/competitors" label="Competitors" icon={Eye} />
           <SidebarNavItem to="/competitor-reports" label="Reports" icon={FileText} />
         </SidebarSection>
 
-        {/* Campaigns */}
         <SidebarSection label="Campaigns">
           <SidebarNavItem to="/campaigns-active" label="Active" icon={Target} />
           <SidebarNavItem to="/campaigns-performance" label="Performance" icon={TrendingUp} />
         </SidebarSection>
 
-        {/* Analytics */}
         <SidebarSection label="Analytics">
           <SidebarNavItem to="/analytics" label="Overview" icon={BarChart3} />
         </SidebarSection>
 
-        {/* Settings */}
         <SidebarSection label="Settings">
           <SidebarNavItem to="/settings-brand" label="Brand" icon={Palette} />
           <SidebarNavItem to="/settings-competitors" label="Competitors" icon={Users} />
