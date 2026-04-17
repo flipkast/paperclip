@@ -63,10 +63,10 @@ export function MarketingSidebar() {
 
       <nav className="flex-1 min-h-0 overflow-y-auto scrollbar-auto-hide flex flex-col gap-4 px-3 py-2">
         <div className="flex flex-col gap-0.5">
-          <SidebarNavItem to="/dashboard" label="Dashboard" icon={LayoutDashboard} />
-          <SidebarNavItem to="/ai-team" label="AI Team" icon={Bot} />
+          <SidebarNavItem to="dashboard" label="Dashboard" icon={LayoutDashboard} />
+          <SidebarNavItem to="ai-team" label="AI Team" icon={Bot} />
           <SidebarNavItem
-            to="/approvals"
+            to="approvals"
             label="Approvals"
             icon={CheckSquare}
             badge={pendingCount}
@@ -74,30 +74,30 @@ export function MarketingSidebar() {
         </div>
 
         <SidebarSection label="Content">
-          <SidebarNavItem to="/content-calendar" label="Calendar" icon={Calendar} />
-          <SidebarNavItem to="/content-assets" label="Assets" icon={FolderOpen} />
-          <SidebarNavItem to="/content-create" label="Create" icon={Video} />
+          <SidebarNavItem to="content-calendar" label="Calendar" icon={Calendar} />
+          <SidebarNavItem to="content-assets" label="Assets" icon={FolderOpen} />
+          <SidebarNavItem to="content-create" label="Create" icon={Video} />
         </SidebarSection>
 
         <SidebarSection label="Intelligence">
-          <SidebarNavItem to="/competitors" label="Competitors" icon={Eye} />
-          <SidebarNavItem to="/competitor-reports" label="Reports" icon={FileText} />
+          <SidebarNavItem to="competitors" label="Competitors" icon={Eye} />
+          <SidebarNavItem to="competitor-reports" label="Reports" icon={FileText} />
         </SidebarSection>
 
         <SidebarSection label="Campaigns">
-          <SidebarNavItem to="/campaigns-active" label="Active" icon={Target} />
-          <SidebarNavItem to="/campaigns-performance" label="Performance" icon={TrendingUp} />
+          <SidebarNavItem to="campaigns-active" label="Active" icon={Target} />
+          <SidebarNavItem to="campaigns-performance" label="Performance" icon={TrendingUp} />
         </SidebarSection>
 
         <SidebarSection label="Analytics">
-          <SidebarNavItem to="/analytics" label="Overview" icon={BarChart3} />
+          <SidebarNavItem to="analytics" label="Overview" icon={BarChart3} />
         </SidebarSection>
 
         <SidebarSection label="Settings">
-          <SidebarNavItem to="/settings-brand" label="Brand" icon={Palette} />
-          <SidebarNavItem to="/settings-competitors" label="Competitors" icon={Users} />
-          <SidebarNavItem to="/settings-integrations" label="Integrations" icon={Link2} />
-          <SidebarNavItem to="/settings-billing" label="Billing" icon={CreditCard} />
+          <SidebarNavItem to="settings-brand" label="Brand" icon={Palette} />
+          <SidebarNavItem to="settings-competitors" label="Competitors" icon={Users} />
+          <SidebarNavItem to="settings-integrations" label="Integrations" icon={Link2} />
+          <SidebarNavItem to="settings-billing" label="Billing" icon={CreditCard} />
         </SidebarSection>
       </nav>
     </aside>
